@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de încasări</title>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/styles.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+<div th:insert="navbar :: navbar"></div>
+<div class="container">
+    <h3>Încasări</h3>
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
+        <tr>
+            <th>Programare</th>
+            <th>Data încasării</th>
+            <th>Suma încasată</th>
+            <th>Tip plată</th>
+        </tr>
+        </thead>
+        <tr th:each="incasare : ${incasari}">
+            <td>
+                <strong th:text="${incasare.programare.pacient.nume + ' ' + incasare.programare.pacient.prenume}"></strong><br>
+                <small class="text-muted" th:text="${incasare.programare.serviciu.denumire}"></small><br>
+                <small th:text="'Dr. ' + ${incasare.programare.medic.angajat.nume + ' ' + incasare.programare.medic.angajat.prenume}"></small>
+            </td>
+            <td th:text="${#temporals.format(incasare.data,'dd-MM-yyyy')}">Data încasării</td>
+            <td th:text="${incasare.suma}">Suma încasată</td>
+            <td th:text="${incasare.tipPlata.denumire}">Tip plată</td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

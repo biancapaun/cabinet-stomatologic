@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cabinet stomatologic </title>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/styles.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div th:insert="navbar :: navbar"></div>
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Bine ati venit la DentSmile!</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a class="card p-3 text-center text-decoration-none" href="/pacienti">
+                <i class="fa-solid fa-users fa-2x text-primary"></i>
+                <span>Pacienți</span>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a class="card p-3 text-center text-decoration-none" href="/angajati">
+                <i class="fa-solid fa-user-doctor fa-2x text-success"></i>
+                <span>Angajați</span>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a class="card p-3 text-center text-decoration-none" href="/servicii">
+                <i class="fa-solid fa-tooth fa-2x text-danger"></i>
+                <span>Servicii</span>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a class="card p-3 text-center text-decoration-none" href="/programari">
+                <i class="fa-solid fa-calendar fa-2x text-info"></i>
+                <span>Programări</span>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-2">
+            <a class="card p-3 text-center text-decoration-none" href="/incasari">
+                <i class="fa-solid fa-money-bill fa-2x text-warning"></i>
+                <span>Încasări</span>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
