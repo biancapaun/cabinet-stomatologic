@@ -8,6 +8,7 @@ import com.cabinet.oltp.repository.AngajatRepository;
 import com.cabinet.oltp.repository.CategorieRepository;
 import com.cabinet.oltp.repository.ServiciuRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class ServiciuService {
     }
 
     public List<Serviciu> findAll() {
-        return serviciuRepository.findAllServiciesWithCategories();
+        return serviciuRepository.findAllServiciesWithCategories(Sort.by("idServiciu").ascending());
     }
 
     public void saveServiciu(ServiciuDto serviciuDto) {

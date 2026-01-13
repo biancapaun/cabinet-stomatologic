@@ -5,6 +5,7 @@ import com.cabinet.oltp.entity.Pacient;
 import com.cabinet.oltp.exceptions.ResourceNotFoundException;
 import com.cabinet.oltp.repository.PacientRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class PacientService {
     }
 
     public List<Pacient> findAll() {
-        return pacientRepository.findAll();
+        return pacientRepository.findAll((Sort.by("idPacient").ascending()));
     }
 
     public void savePacient(PacientDto pacientDto) {

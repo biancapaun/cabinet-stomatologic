@@ -3,6 +3,7 @@ package com.cabinet.oltp.service;
 import com.cabinet.oltp.entity.Categorie;
 import com.cabinet.oltp.repository.CategorieRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,6 @@ public class CategorieService {
     }
 
     public List<Categorie> findAll() {
-        return categorieRepository.findAll();
+        return categorieRepository.findAll(Sort.by("idCategorie").ascending());
     }
 }

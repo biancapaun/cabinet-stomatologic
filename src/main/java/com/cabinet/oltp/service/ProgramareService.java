@@ -11,6 +11,7 @@ import com.cabinet.oltp.repository.PacientRepository;
 import com.cabinet.oltp.repository.ProgramareRepository;
 import com.cabinet.oltp.repository.ServiciuRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class ProgramareService {
     }
 
     public List<Programare> findAll() {
-        return programareRepository.findAll();
+        return programareRepository.findAll(Sort.by("idProgramare").ascending());
     }
 
     public void saveProgramare(ProgramareDto programareDto) {
